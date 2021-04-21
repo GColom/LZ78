@@ -3,7 +3,7 @@
 """
 Created on Tue Mar  3 23:28:33 2020
 
-@author: giulio
+@author: Giulio Colombini
 """
 
 from numpy import array, ceil, log2, unique, append, int64, random
@@ -120,6 +120,7 @@ def test(sample_size = 100000, resolution = 0.1):
     plt.plot([resolution * p for p in range(graining+1)], entropy_rates, label = 'LZ 78 estimate')
     plt.plot([resolution * p for p in range(graining+1)], [coin_ent(resolution*p) for p in range(graining+1)], label = 'Computed')
     plt.legend()
+    plt.savefig('test.svg')
 
 if __name__ == '__main__':
     import matplotlib.pyplot as plt
