@@ -65,7 +65,7 @@ def erLZ78(sequence, override_input_check = False):
     if not override_input_check:
         sequence = array(sequence)
         if sequence.dtype.kind in _UNSUPPORTED_KINDS_:
-            raise ValueError(_UNSUPPORTED_KIND_TEMPLATE_.format(sequence.dtype.kind))
+            raise TypeError(_UNSUPPORTED_KIND_TEMPLATE_.format(sequence.dtype.kind))
         if sequence.size < _MINIMUM_SAMPLE_SIZE_:
             raise InputError
     
